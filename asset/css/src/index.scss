@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Gudea:wght@400;700&display=swap');
+$dark-color: #232732;
+$light-color: #7f90c4;
+
+body {
+    font-family: 'Gudea', 'sans-serif';
+    background: rgb(174,205,228);
+    background: -moz-linear-gradient(180deg, rgba(174,205,228,1) 0%, rgba(137,163,196,1) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(174,205,228,1) 0%, rgba(137,163,196,1) 100%);
+    background: linear-gradient(180deg, rgba(174,205,228,1) 0%, rgba(137,163,196,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#aecde4",endColorstr="#89a3c4",GradientType=1);
+}
+
+.side-heading {
+    background-color: #eee;
+    padding: 1rem 2rem;
+    font-weight: bold !important;
+    border-bottom: 1px solid #dde;
+    
+    color: $dark-color;
+}
+
+.side-content {
+    padding: 1rem 2.25rem;
+}
+
+.terminal {
+    background-color: $dark-color;
+    background-image: url(../../bg.jpg);
+    font-family: Consolas, Courier, monospace;
+    color: $light-color;
+    user-select: none;
+
+    margin-bottom: 80px;
+
+    .code {
+        padding: 2rem;
+        background-color: $dark-color;
+    }
+
+    .blinker {
+        animation-duration: 700ms;
+        animation-name: blink;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-timing-function: steps(2, jump-none);
+    }
+    
+    @keyframes blink {
+        from {
+            opacity: 1;
+        }
+    
+        to {
+            opacity: 0;
+        }
+    }
+}
+
+.carousel {
+    margin: 0 auto;
+    box-shadow: 2px 2px 12px 2px #0003;
+
+    &.preview {
+        max-width: 500px;
+    }
+
+    &.preview:hover {
+        box-shadow: 3px 3px 12px 3px fade-out($color: $light-color, $amount: 0.7);;
+    }
+}
+
+.modal {
+    padding-left: 17px;
+
+    .close-container {
+        position: absolute;
+        right: 0.5rem;
+        top: 0.5rem;
+        z-index: 1;
+    }
+
+    .modal-dialog {
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    .modal-body {
+        background-color: $light-color;
+    }
+
+    .modal-content {
+        height: 80vh;
+    }
+
+    .carousel-item {
+        padding: 1rem;
+
+        & img {
+            margin: 0 auto;
+            vertical-align: middle;
+        }
+    }
+
+    .carousel-indicators {
+        width: min-content;
+        background-color: $light-color;
+        height: 20px;
+
+        align-items: center;
+        margin: 0 auto;
+        padding: 0 10px;
+        border-radius: 1rem;
+    }
+
+    .carousel-item img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+    
+    .modal-body, .carousel-inner, .carousel, .carousel-item, .v-centrifier {
+        height: 100%;
+    }
+
+    .v-centrifier {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .carousel-control-prev, .carousel-control-next {
+        background-color: #0005;
+        width: 4rem;
+    }
+}
+
+footer {
+    background-color: $dark-color;
+    color: #eee;
+    margin-top: 3rem;
+    padding: 3rem;
+}
