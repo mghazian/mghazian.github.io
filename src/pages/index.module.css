@@ -21,3 +21,12 @@
   align-items: center;
   justify-content: center;
 }
+
+.linkLogo {
+  transition: all ease-out 0.15s;
+  color: whitesmoke;
+}
+
+.linkLogo:hover {
+  transform: scale(1.3) rotateZ(10deg)
+}
