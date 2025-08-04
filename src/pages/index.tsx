@@ -10,6 +10,7 @@ import styles from './index.module.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faBullseye, faLightbulb, faUsers } from '@fortawesome/free-solid-svg-icons';
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
@@ -120,11 +121,60 @@ function HeroSection(): ReactNode {
 }
 
 
+function ProfessionalValueSection() : ReactNode {
+  return <div style={{ color: 'whitesmoke', minHeight: '100vh', background: 'rgb(18, 38, 61)', padding: '1rem', width: '100%' }} className='d-flex flex-column align-items-center' >
+      <div className="d-flex flex-column" style={{ width: '1000px' }}>
+
+        <h1 style={{ fontSize: '32pt', fontWeight: 'bold' }} className='my-5'>Professional Value</h1>
+        <div style={{ fontSize: '20pt' }}>
+          <div className='d-flex flex-row align-items-center'>
+            <FontAwesomeIcon icon={faUsers} style={{ width: '100px', height: '100px', marginRight: '50px' }} />
+            <div className="d-flex flex-column">
+              <h2 className='mb-3' style={{ fontSize: '28pt', fontWeight: 'bold', color: '#F2E14F' }}>Listen and Understand</h2>
+              <div>
+                Everyone has specific problem and ideas
+              </div>
+              <div>
+                So I try to listen and understand what they need
+              </div>
+            </div>
+          </div>
+          <div className="d-flex flex-row mt-4 align-items-center">
+            <FontAwesomeIcon icon={faLightbulb} style={{ width: '100px', height: '100px', marginRight: '50px' }} />
+            <div className="d-flex flex-column">
+              <h2 className='mb-3' style={{ fontSize: '28pt', fontWeight: 'bold', color: '#F2E14F' }}>Problem Solving</h2>
+              <div>
+                I capitalize my love in problem solving
+              </div>
+              <div>
+                So I hunger to help other people
+              </div>
+            </div>
+          </div>
+          <div className="d-flex flex-row mt-4 align-items-center">
+            <FontAwesomeIcon icon={faBullseye} style={{ width: '100px', height: '100px', marginRight: '50px' }} />
+            <div className="d-flex flex-column">
+              <h2 className='mb-3' style={{ fontSize: '28pt', fontWeight: 'bold', color: '#F2E14F' }}>Searching for Impact</h2>
+              <div>
+                Work that nobody use is not useful
+              </div>
+              <div>
+                So I want to make sure what I build helps people
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+  </div>
+}
+
 export default function Home(): ReactNode {
   const {siteConfig} = useDocusaurusContext();
   return (<>
       <Navbar/>
       <HeroSection/>
+      <ProfessionalValueSection/>
       <div style={{ minHeight: '100vh', background: '#fb1b2d' }}>
         YEI
       </div>
