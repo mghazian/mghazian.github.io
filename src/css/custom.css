@@ -35,3 +35,24 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+@font-face {
+  font-family: 'BaseFont';
+  src: url('/fonts/Bitter-VariableFont_wght.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --ifm-font-family-base: 'BaseFont', sans-serif;
+  --ifm-heading-font-family: 'BaseFont', sans-serif;
+}
+
+html {
+  background-color: #f0e9e5;
+}
+
+#__docusaurus {
+  align-items: center;
+}
