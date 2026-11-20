@@ -1,6 +1,7 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import tailwindcss from '@tailwindcss/postcss';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -36,6 +37,18 @@ const config: Config = {
     locales: ['en'],
   },
 
+  plugins: [
+    function tailwindPlugin() {
+      return {
+        name: 'docusaurus-tailwindcss',
+        configurePostCss(postcssOptions) {
+          postcssOptions.plugins.push(tailwindcss());
+          return postcssOptions;
+        },
+      };
+    },
+  ],
+
   presets: [
     [
       'classic',
@@ -63,7 +76,7 @@ const config: Config = {
           onUntruncatedBlogPosts: 'warn',
         },
         theme: {
-          customCss: ['./src/css/custom.css', './node_modules/bootstrap/dist/css/bootstrap.min.css'],
+          customCss: './src/css/custom.css',
         },
       } satisfies Preset.Options,
     ],
