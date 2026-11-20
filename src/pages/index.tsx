@@ -7,9 +7,9 @@ export default function Home(): ReactNode {
   return (<div className="flex flex-col justify-center max-w-[1024px]">
     <div className="flex w-full justify-center">
       <div className="h-screen flex flex-col justify-center align-center">
-        <p>One day, I thought to myself</p>
+        <p className="text-[20pt] mb-6">One day, I thought to myself</p>
         <h1>"Why don't I make a web page, a digital medium, using <i>Serif</i> font? Will it work?</h1>
-        <h2>Lo and behold. I mean, <i>welcome.</i></h2>
+        <p className="text-[20pt] mt-6">Lo and behold. I mean, <i>welcome.</i></p>
       </div>
     </div>
 
