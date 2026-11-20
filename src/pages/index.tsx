@@ -5,6 +5,15 @@ import { usePluginData } from "@docusaurus/useGlobalData";
 
 export default function Home(): ReactNode {
   const {siteConfig} = useDocusaurusContext();
+
+  type Post = {
+    title: string,
+    description: string,
+    permalink: string
+  }
+
+  const { posts } = usePluginData('blog-posts') as { posts: Post[] }
+
   return (<>
     <header className="sticky background top-0 h-[50px] w-full flex justify-center items-center">
       [ Hi I'm a header ]
@@ -19,8 +28,18 @@ export default function Home(): ReactNode {
       </div>
 
       <div className="flex w-full justify-center">
-        <div className="h-[33vh] flex flex-col">
-          I'm sorry for the unfortunate soul who stumbled upon this corner of the world. But make yourself at home anyway.
+        <div className="min-h-[50vh] mb-[90px] flex flex-col">
+          <p>A front page is supposed to showcase a product.</p>
+          <p>And I was supposed to be the product.</p>
+          <p></p>
+          <p>But I genuinely don't know how to market myself.</p>
+          <p>I guess that sort of explains the blankness of the page's design.</p>
+          <p></p>
+          <p>Oh, I like cats. Surely that amount for something.</p>
+          <p>Well I'm also a 5 YOE full stack engineer in Node.js, Java, PHP, and React that has records in getting deep into product building with startups and startup-minded company, with histories in performance optimization across frontend, backend, and database stack. <strong>But I also like cats</strong>. That's important.</p>
+          <p>I once got 2 stray cats that routinely say hi to me when we passed by. Technically they meow, but I like to think they are saying hi to me.</p>
+          <p></p>
+          <p>Do you like cats?</p>
         </div>
       </div>
 
