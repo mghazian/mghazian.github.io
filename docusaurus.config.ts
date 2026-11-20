@@ -47,6 +47,7 @@ const config: Config = {
         },
       };
     },
+    './src/plugins/blog-posts.ts',
   ],
 
   presets: [

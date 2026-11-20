@@ -1,6 +1,7 @@
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { ReactNode } from "react";
 import styles from './index.module.css';
+import { usePluginData } from "@docusaurus/useGlobalData";
 
 export default function Home(): ReactNode {
   const {siteConfig} = useDocusaurusContext();
@@ -28,9 +29,9 @@ export default function Home(): ReactNode {
           <h2>I wrote these!</h2>
 
           <div className="flex gap-3">
-            <PostPreview title={'Title'} description={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet commodi eligendi nulla rem saepe, incidunt porro accusantium inventore dolorem molestias fugiat! Facere temporibus iste maxime corporis beatae deserunt aperiam quos.'} />
-            <PostPreview title={'Title'} description={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore recusandae, eveniet numquam maxime officiis nihil rerum corporis ea rem quas, quidem neque nam incidunt, ipsa eligendi eaque veniam? At, voluptatem!'} />
-            <PostPreview title={'Title'} description={'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id doloribus odio nihil placeat doloremque eum! Corporis sit dolore expedita eveniet, inventore explicabo provident optio illum rerum voluptatem. Placeat, repellat officiis.'} />
+            {posts.map(post => (
+              <PostPreview title={post.title} description={post.description} />
+            ))}
           </div>
 
         </div>
