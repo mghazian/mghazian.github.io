@@ -2,6 +2,7 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { ReactNode } from "react";
 import styles from './index.module.css';
 import { usePluginData } from "@docusaurus/useGlobalData";
+import Link from "@docusaurus/Link";
 
 export default function Home(): ReactNode {
   const {siteConfig} = useDocusaurusContext();
@@ -49,7 +50,7 @@ export default function Home(): ReactNode {
 
           <div className="flex gap-3">
             {posts.map(post => (
-              <PostPreview title={post.title} description={post.description} />
+              <PostPreview title={post.title} description={post.description} url={post.permalink} />
             ))}
           </div>
 
@@ -63,8 +64,8 @@ export default function Home(): ReactNode {
   )
 }
 
-function PostPreview(props: {title: string, description: string, wordLimit?: number}): ReactNode {
-  const { title, description } = props;
+function PostPreview(props: {title: string, description: string, url: string, wordLimit?: number}): ReactNode {
+  const { title, description, url } = props;
   let words = description.split(' ')
   const wordLimit = props.wordLimit ?? 20;
   const overLimit = words.length > wordLimit;
@@ -82,6 +83,9 @@ function PostPreview(props: {title: string, description: string, wordLimit?: num
       <div className={`grow-1 border-1 p-4 ${styles.postPreview}`} style={{zIndex: 0}}>
         <h3>{title}</h3>
         <p>{words.join(' ') + (overLimit ? '...' : '')}</p>
+        <div className="mt-4 flex justify-end p-3">
+          <Link className="text-sm" to={url}>Read more</Link>
+        </div>
       </div>
     </div>
   )
