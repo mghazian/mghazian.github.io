@@ -25,7 +25,7 @@ export default function Home(): ReactNode {
           <p className="text-[20pt] mb-6">One day, I thought to myself</p>
           <h1>"Why don't I make a web page, a digital medium, using <i className="px-2">Serif</i> font? Will it work?</h1>
           <p className="text-[20pt] mt-6">Lo and behold. I mean, <i>welcome.</i></p>
-          <p className="text-[14pt] mt-10 text-right"><i>&mdash; A 5 YOE Fullstack Engineer<br/>who enjoys making people sleep easier<br/>and making slow things less slow</i></p>
+          <p className="text-[14pt] mt-10 text-right text-(--secondary)"><i>&mdash; A 5 YOE Fullstack Engineer<br/>who enjoys making people sleep easier<br/>and making slow things less slow</i></p>
         </div>
       </div>
 
