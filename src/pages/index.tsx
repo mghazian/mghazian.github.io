@@ -46,17 +46,13 @@ export default function Home(): ReactNode {
         </div>
       </div>
 
-      <div className="flex w-full justify-center">
-        <div className="min-h-[50vh] flex flex-col py-5">
+      <div className="flex flex-col w-full justify-center gap-3">
           <h2>I wrote these!</h2>
 
-          <div className="flex gap-3">
             {posts.map(post => (
               <PostPreview title={post.title} description={post.description} url={post.permalink} />
             ))}
-          </div>
 
-        </div>
       </div>
     </div>
     <Footer />
@@ -80,7 +76,7 @@ function PostPreview(props: {title: string, description: string, url: string, wo
           <path d="M -1 42 L 46 -2 L 66 -2 L -1 62 Z" fill="#ed1524" stroke="#111" strokeWidth="0" strokeLinejoin="round" />
         </svg>
       </div>
-      <div className={`grow-1 border-1 p-4 ${styles.postPreview}`} style={{zIndex: 0}}>
+      <div className={`grow-1 border-1 border-(--secondary) p-4 ${styles.postPreview}`} style={{zIndex: 0}}>
         <h3>{title}</h3>
         <p>{words.join(' ') + (overLimit ? '...' : '')}</p>
         <div className="mt-4 flex justify-end p-3">
